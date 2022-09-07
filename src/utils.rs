@@ -81,14 +81,10 @@ pub trait Solution {
     fn day_number() -> i32;
 
     /// The part 1 solution to be implemented.
-    fn solution_impl_1(_data: Vec<String>) -> Option<i64> {
-        None
-    }
+    fn solution_impl_1(_data: Vec<String>) -> Option<i64>;
 
     /// The part 2 solution to be implemented.
-    fn solution_impl_2(_data: Vec<String>) -> Option<i64> {
-        None
-    }
+    fn solution_impl_2(_data: Vec<String>) -> Option<i64>;
 
     fn get_func(part: Part) -> fn(Vec<String>) -> Option<i64> {
         match part {

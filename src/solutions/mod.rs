@@ -5,12 +5,13 @@ pub mod day4;
 pub mod day5;
 pub mod day6;
 pub mod day7;
+pub mod day8;
 
 use crate::utils::Solution;
 
 #[allow(dead_code)]
 pub fn run_latest() {
-    day7::Day7::run();
+    day8::Day8::run();
 }
 
 #[allow(dead_code)]
@@ -21,5 +22,6 @@ pub fn run_all() {
     day4::Day4::run();
     day5::Day5::run();
     day6::Day6::run();
+    day7::Day7::run();
     run_latest();
 }
