@@ -1,0 +1,17 @@
+use crate::utils::Solution;
+
+pub struct DayDAY;
+
+impl Solution for DayDAY {
+    fn day_number() -> i32 {
+        DAY
+    }
+
+    fn solution_impl_1(_data: Vec<String>) -> Option<i64> {
+        None
+    }
+
+    fn solution_impl_2(_data: Vec<String>) -> Option<i64> {
+        None
+    }
+}
