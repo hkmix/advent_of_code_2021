@@ -1,8 +1,7 @@
-use std::any::Any;
 use std::collections::HashSet;
 
 use crate::solutions::day9::Grid;
-use crate::utils::{Part, Solution};
+use crate::utils::Solution;
 
 pub struct Day11;
 
