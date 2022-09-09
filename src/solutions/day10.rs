@@ -1,6 +1,6 @@
 use std::collections::{HashMap, VecDeque};
 
-use crate::utils::{Part, Solution};
+use crate::utils::Solution;
 
 pub struct Day10;
 

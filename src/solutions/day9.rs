@@ -1,17 +1,18 @@
 use std::collections::BinaryHeap;
 use std::collections::HashSet;
+use std::fmt::{Display, Formatter};
 
 use crate::utils::Solution;
 
 pub struct Day9;
 
 #[derive(Debug)]
-struct Grid {
+pub struct Grid {
     pub data: Vec<Vec<i64>>,
 }
 
 impl Grid {
-    fn from_data(data: Vec<String>) -> Self {
+    pub fn from_data(data: Vec<String>) -> Self {
         Grid {
             data: data
                 .into_iter()
@@ -25,7 +26,7 @@ impl Grid {
         }
     }
 
-    fn at(&self, row: i64, col: i64) -> Option<i64> {
+    pub fn at(&self, row: i64, col: i64) -> Option<i64> {
         if self.data.is_empty() {
             return None;
         }
@@ -38,6 +39,25 @@ impl Grid {
             None
         } else {
             Some(self.data[row as usize][col as usize])
+        }
+    }
+
+    pub fn at_mut(&mut self, row: i64, col: i64) -> Option<&mut i64> {
+        if self.data.is_empty() {
+            return None;
+        }
+
+        if row < 0
+            || col < 0
+            || row as usize >= self.data.len()
+            || col as usize >= self.data[0].len()
+        {
+            None
+        } else {
+            self.data
+                .get_mut(row as usize)
+                .unwrap()
+                .get_mut(col as usize)
         }
     }
 
@@ -54,6 +74,24 @@ impl Grid {
         count += self.dfs_count(row, col + 1, seen);
 
         count
+    }
+}
+
+impl Display for Grid {
+    fn fmt(&self, f: &mut Formatter) -> std::fmt::Result {
+        writeln!(
+            f,
+            "{}",
+            self.data
+                .iter()
+                .map(|vec_i64| vec_i64
+                    .iter()
+                    .map(i64::to_string)
+                    .collect::<Vec<String>>()
+                    .join(" "))
+                .collect::<Vec<String>>()
+                .join("\n")
+        )
     }
 }
 
